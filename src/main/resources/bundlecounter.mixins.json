@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.github.apehum.bundlecounter.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+    ],
+    "client": [
+        "ClientBundleTooltipMixin",
+        "GuiGraphicsMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
