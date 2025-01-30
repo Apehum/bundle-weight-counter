@@ -13,7 +13,10 @@
         "client": [
             "com.github.apehum.bundlecounter.BundleCounter"
         ],
-        "main": []
+        "main": [],
+        "modmenu": [
+            "com.github.apehum.bundlecounter.config.BundleCounterModMenuIntegration"
+        ]
     },
     "mixins": [
         "bundlecounter.mixins.json"
