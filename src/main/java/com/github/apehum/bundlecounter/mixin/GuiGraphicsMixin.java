@@ -1,5 +1,6 @@
 package com.github.apehum.bundlecounter.mixin;
 
+import com.github.apehum.bundlecounter.BundleCounter;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ItemStack;
@@ -12,6 +13,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class GuiGraphicsMixin {
     @Redirect(method = "renderItemCount", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getCount()I"))
     private int getCount(ItemStack instance) {
+        if (!BundleCounter.CONFIG.shouldRenderOnItem) {
+            return instance.getCount();
+        }
+
         if (instance.getCount() != 1) {
             return instance.getCount();
         }
